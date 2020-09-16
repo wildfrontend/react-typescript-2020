@@ -1,0 +1,21 @@
+{
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "api": "./src/api",
+          "assets": "./src/assets",
+          "components": "./src/components",
+          "reducers": "./src/store/reducers",
+          "routes": "./src/routes",
+          "functions": "./src/functions",
+          "hooks": "./src/hooks",
+          "store": "./src/store"
+        },
+        "root": ["."]
+      }
+    ]
+  ],
+  "presets": ["react-app"]
+}

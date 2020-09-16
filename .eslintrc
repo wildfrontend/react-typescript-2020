@@ -1,0 +1,22 @@
+{
+  "rules": {
+    "react/jsx-sort-props": [
+      "warn",
+      {
+        "callbacksLast": true,
+        "reservedFirst": true,
+        "shorthandFirst": true
+      }
+    ]
+    // "sort-imports": [
+    //   "warn",
+    //   {
+    //     "ignoreCase": false,
+    //     "ignoreDeclarationSort": false,
+    //     "ignoreMemberSort": false,
+    //     "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+    //   }
+    // ]
+  },
+  "extends": "react-app"
+}

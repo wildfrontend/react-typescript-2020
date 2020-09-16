@@ -1,0 +1,10 @@
+{
+    "*.(ts|tsx|js)": [
+    
+        "eslint --fix",
+        "jest --bail --findRelatedTests"
+    ],
+    "./src/*.*":[
+        "prettier --write",
+    ]
+}

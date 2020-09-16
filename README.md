@@ -1,44 +1,119 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## React Design Pattern
 
-## Available Scripts
+**StyleGuide**
+[Angular StyleGuide](https://angular.tw/guide/styleguide)
 
-In the project directory, you can run:
+##### 只有`Components`檔案及資料夾才能用`大寫駝峰`
 
-### `npm start`
+##### `hook` 前綴一律加`use`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+##### 當有多個附屬檔案時用資料夾管理，
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+example:
 
-### `npm test`
+```
+- Home.js
+- Home.styled.js
+- Home.test.js
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+用`Home`當作資料夾並加上`index.(js|ts)` 匯出元件
 
-### `npm run build`
+**Typescript**
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [typescript-cheatsheets/react](https://github.com/typescript-cheatsheets/react)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Git Commit Pattern
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> refer : https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#heading=h.em2hiij8p46d
 
-### `npm run eject`
+### Before Commit
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Clean Test code
+  - remove `console.log()`
+- Format ESlint
+  - fix all eslint error
+- Prettier
+  - format all js
+- Test
+  - pass all test case
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Commit Formmat
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Refer**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- [Commit Lint](https://github.com/conventional-changelog/commitlint/#what-is-commitlint)
 
-## Learn More
+**Example**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`be careful error of empty char!!`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+type(scope?): subject  #scope is optional
+```
+
+**Format** :
+
+```sh
+<type> (scope): title
+- do something
+- do another
+```
+
+Allowed type : `* required`
+
+| type     | comment                             |
+| -------- | ----------------------------------- |
+| feat     | feature                             |
+| fix      | bug fix                             |
+| docs     | document                            |
+| style    | formatting, missing semi colons,... |
+| refactor | refactor                            |
+| test     | when adding missing tests           |
+| chore    | maintain                            |
+
+**簡中**
+
+| type     | comment                                           |
+| -------- | ------------------------------------------------- |
+| feat     | 新功能（feature）                                 |
+| fix      | 修补 bug                                          |
+| docs     | 文档（documentation）                             |
+| style    | 格式（不影响代码运行的变动）                      |
+| refactor | 重构（即不是新增功能，也不是修改 bug 的代码变动） |
+| test     | 增加测试                                          |
+| chore    | 构建过程或辅助工具的变动                          |
+
+Allowed scope : `not requried`
+
+```
+Scope can be anything specifying place of the commit change.
+```
+
+| scope      | comment             |
+| ---------- | ------------------- |
+| components | componetns folder   |
+| root       | root project config |
+
+Allowed title : `* required`
+
+```md
+This is a very short description of the change.
+
+- use imperative, present tense: “change” not “changed” nor “changes”
+- don't capitalize first letter
+- no dot (.) at the end
+```
+
+## Format
+
+Sort `package.json` by key
+
+```sh
+npx sort-package-json
+```
+
+Other Json file
+
+1. go to [JSON Sorter](https://r37r0m0d3l.github.io/json_sort/)
+2. copy file and replace prettier file
